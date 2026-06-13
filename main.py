@@ -61,7 +61,7 @@ if __name__ == '__main__':
     print("Using:", device)
 
     os.makedirs("checkpoints", exist_ok=True)
-    os.makedirs("outputs", exist_ok=True)
+    os.makedirs("outputs_frozen_weights", exist_ok=True)
 
     ds_train = FixationDataset(
         root_dir=r'.\cv2_project_data',
@@ -198,5 +198,5 @@ if __name__ == '__main__':
                 'optimizer_state_dict': opt.state_dict(),
                 'val_loss': best_val_loss,
             }
-            torch.save(checkpoint, os.path.join("checkpoints", "best_model.pth"))
+            torch.save(checkpoint, os.path.join("checkpoints", "best_model_test.pth"))
             print(f"  --> Saved new best weights! (Val Loss: {best_val_loss:.4f})")

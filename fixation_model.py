@@ -35,8 +35,8 @@ class FixationNet(nn.Module):
         kernel = torch.matmul(g.unsqueeze(-1), g.unsqueeze(-1).t())
         self.smooth_kernel = nn.Parameter(data=kernel, requires_grad=False)
         self.log_center_bias = nn.Parameter(data=torch.log(get_center_bias()), requires_grad=False)
-        for param in self.fcn.backbone.parameters():
-            param.requires_grad = False
+        # for param in self.fcn.backbone.parameters():
+        #     param.requires_grad = False
 
     def forward(self, x):
         res = self.fcn(x)

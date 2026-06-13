@@ -222,4 +222,5 @@ __marimo__/
 .idea
 cv2_project_data
 checkpoints/
-outputs/
+outputs_frozen_weights/
+outputs
