@@ -224,3 +224,6 @@ cv2_project_data
 checkpoints/
 outputs_frozen_weights/
 outputs
+
+**.aux
+.mplconfig
